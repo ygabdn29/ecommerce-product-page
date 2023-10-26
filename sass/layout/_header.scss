@@ -1,0 +1,47 @@
+@use "../abstract/variables" as variables;
+
+.header {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  align-items: center;
+  padding: 3.6rem 8.4rem;
+
+  &__logo {
+    width: 20rem;
+  }
+
+  &__menu {
+    list-style: none;
+    display: flex;
+    font-size: 1.8rem;
+    gap: 2.4rem;
+
+    &-list > &-link:link,
+    &-link:visited {
+      text-decoration: none;
+      color: variables.$dark-gray-blue;
+    }
+  }
+
+  &__account-details {
+    display: flex;
+    align-items: center;
+    justify-self: right;
+    gap: 3.6rem;
+
+    .header__cart-container {
+      .header__cartIcon {
+        height: 2.4rem;
+      }
+    }
+
+    .header__account-picture {
+      height: 6.4rem;
+    }
+  }
+}
+
+.sectionBreak {
+  border-top: 1px solid variables.$light-gray-blue;
+  margin: 0 8.4rem;
+}

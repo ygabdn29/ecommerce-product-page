@@ -21,60 +21,115 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="/public/css/main.css" />
+    <link rel="stylesheet" href="./css/main.css" />
   </head>
   <body>
-    <main class="container container__productPage">
+    <main class="product-page">
       <header class="header">
-        <nav class="navigation">
-          <ul class="navigation__menu">
-            <li class="navigation__list">
-              <a href="" class="navigation__link">Collections</a>
+        <img src="./images/logo.svg" alt="Sneakers Logo" class="header__logo" />
+
+        <nav class="header__navigation">
+          <ul class="header__menu">
+            <li class="header__menu-list">
+              <a href="#" class="header__menu-link">Collections</a>
             </li>
 
-            <li class="navigation__list">
-              <a href="" class="navigation__link">Men</a>
+            <li class="header__menu-list">
+              <a href="#" class="header__menu-link">Men</a>
             </li>
 
-            <li class="navigation__list">
-              <a href="" class="navigation__link">Women</a>
+            <li class="header__menu-list">
+              <a href="#" class="header__menu-link">Women</a>
             </li>
 
-            <li class="navigation__list">
-              <a href="" class="navigation__link">About</a>
+            <li class="header__menu-list">
+              <a href="#" class="header__menu-link">About</a>
             </li>
 
-            <li class="navigation__list">
-              <a href="" class="navigation__link">contact</a>
+            <li class="header__menu-list">
+              <a href="#" class="header__menu-link">Contact</a>
             </li>
           </ul>
         </nav>
-        <img src="" alt="" class="header__logo" />
 
-        <img src="" alt="" class="header__cartIcon" />
+        <div class="header__account-details">
+          <div class="header__cart-container">
+            <img
+              src="./images/icon-cart.svg"
+              alt="Cart Icon"
+              class="header__cartIcon"
+            />
+          </div>
 
-        <img src="" alt="" class="header__accountPicture" />
+          <img
+            src="./images/image-avatar.png"
+            alt="Account Picture"
+            class="header__account-picture"
+          />
+        </div>
       </header>
 
-      <img src="" alt="" class="productPage__image" />
+      <hr class="sectionBreak" />
 
-      <h2 class="heading heading--secondary">Sneaker Company</h2>
+      <div class="product-page__product-container">
+        <div class="product-page__image-container">
+          <img
+            src="./images/image-product-1.jpg"
+            alt="Product Image"
+            class="product-page__product-image"
+          />
 
-      <h1 class="heading heading--primary">Fall Limited Edition Sneakers</h1>
+          <div class="product-page__image-gallery">
+            <img
+              src="./images/image-product-1-thumbnail.jpg"
+              alt="Product Image"
+              class="product-page__gallery-image"
+            />
 
-      <p class="productPage__description">
-        These low-profile sneakers are your perfect casual wear companion.
-        Featuring a durable rubber outer sole, they’ll withstand everything the
-        weather can offer.
-      </p>
+            <img
+              src="./images/image-product-2-thumbnail.jpg"
+              alt="Product Image"
+              class="product-page__gallery-image"
+            />
 
-      <p class="productPage__price">
-        $125.00 <span class="productPage__discount">50%</span>
-      </p>
+            <img
+              src="./images/image-product-3-thumbnail.jpg"
+              alt="Product Image"
+              class="product-page__gallery-image"
+            />
 
-      <p class="productPage__originalPrice">$250.00</p>
+            <img
+              src="./images/image-product-4-thumbnail.jpg"
+              alt="Product Image"
+              class="product-page__gallery-image"
+            />
+          </div>
+        </div>
 
-      <form action="" class="productPage__form">0 Add to cart</form>
+        <div class="product-page__product-details">
+          <h2 class="heading heading--secondary">Sneaker Company</h2>
+
+          <h1 class="heading heading--primary">
+            Fall Limited Edition Sneakers
+          </h1>
+
+          <p class="product-page__product-description">
+            These low-profile sneakers are your perfect casual wear companion.
+            Featuring a durable rubber outer sole, they’ll withstand everything
+            the weather can offer.
+          </p>
+
+          <div class="product-page__product-price-container">
+            <p class="product-page__product-price">
+              $125.00 <span class="product-page__product-discount">50%</span>
+            </p>
+
+            <p class="product-page__original-price">$250.00</p>
+          </div>
+
+          <form action="" class="product-page__form">0 Add to cart</form>
+        </div>
+      </div>
     </main>
   </body>
 </html>

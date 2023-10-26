@@ -1,0 +1,121 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "Kumbh Sans", sans-serif;
+  font-weight: 400;
+  color: hsl(220, 13%, 13%);
+}
+
+.heading {
+  font-weight: 700;
+}
+.heading--primary {
+  color: hsl(220, 13%, 13%);
+  font-size: 4.8rem;
+  line-height: 1;
+}
+.heading--secondary {
+  font-size: 3.6rem;
+  color: hsl(26, 100%, 55%);
+  font-size: 2.4rem;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  align-items: center;
+  padding: 3.6rem 8.4rem;
+}
+.header__logo {
+  width: 20rem;
+}
+.header__menu {
+  list-style: none;
+  display: flex;
+  font-size: 1.8rem;
+  gap: 2.4rem;
+}
+.header__menu-list > .header__menu-link:link, .header__menu-link:visited {
+  text-decoration: none;
+  color: hsl(219, 9%, 45%);
+}
+.header__account-details {
+  display: flex;
+  align-items: center;
+  justify-self: right;
+  gap: 3.6rem;
+}
+.header__account-details .header__cart-container .header__cartIcon {
+  height: 2.4rem;
+}
+.header__account-details .header__account-picture {
+  height: 6.4rem;
+}
+
+.sectionBreak {
+  border-top: 1px solid hsl(223, 64%, 98%);
+  margin: 0 8.4rem;
+}
+
+.product-page__product-container {
+  padding: 8.4rem 14rem;
+  display: flex;
+  gap: 12rem;
+  align-items: center;
+}
+.product-page__product-image {
+  width: 60rem;
+  border-radius: 25px;
+  margin-bottom: 2.4rem;
+}
+.product-page__image-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  -moz-column-gap: 3.6rem;
+       column-gap: 3.6rem;
+  justify-items: center;
+}
+.product-page__gallery-image {
+  border-radius: 15px;
+  width: 100%;
+}
+.product-page__product-details {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.product-page__product-description {
+  font-size: 1.6rem;
+  color: hsl(219, 9%, 45%);
+}
+.product-page__product-price {
+  font-weight: 700;
+  font-size: 3.6rem;
+  display: flex;
+  gap: 1.2rem;
+}
+.product-page__product-discount {
+  font-size: 2.4rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 10px;
+  align-self: center;
+  background-color: hsl(25, 100%, 94%);
+  color: hsl(26, 100%, 55%);
+}
+.product-page__original-price {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: hsl(220, 14%, 75%);
+  text-decoration: line-through;
+}/*# sourceMappingURL=main.css.map */
