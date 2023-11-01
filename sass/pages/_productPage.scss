@@ -1,4 +1,5 @@
 @use "../abstract/variables" as variables;
+@use "../abstract/mixins" as mixins;
 
 .product-page {
   &__product-container {
@@ -6,12 +7,33 @@
     display: flex;
     gap: 12rem;
     align-items: center;
+
+    @include mixins.responsive(mixins.$mobile) {
+      flex-direction: column;
+      align-items: left;
+      padding: 0;
+
+      gap: 3rem;
+    }
   }
 
   &__product-image {
     max-width: 55rem;
     border-radius: 25px;
     margin-bottom: 3.6rem;
+
+    @include mixins.responsive(mixins.$mobile) {
+      border-radius: 0;
+      margin-bottom: 0;
+      max-width: 100vw;
+
+      // &::before {
+      //   content: "";
+      //   background-image: url("/images/icon-previous.svg");
+      //   position: absolute;
+      //   width: 10rem;
+      // }
+    }
   }
 
   &__image-gallery {
@@ -19,6 +41,10 @@
     grid-template-columns: repeat(4, 1fr);
     column-gap: 3.6rem;
     justify-items: center;
+
+    @include mixins.responsive(mixins.$mobile) {
+      display: none;
+    }
   }
 
   &__gallery-image {
@@ -31,13 +57,23 @@
     flex-direction: column;
     justify-content: space-between;
     gap: 3.2rem;
+
+    @include mixins.responsive(mixins.$mobile) {
+      justify-self: center;
+      padding: 0 3rem;
+      gap: 3rem;
+    }
   }
 
   &__product-description {
     font-size: 1.6rem;
-    font-weight: 700;
+    font-weight: 400;
     color: variables.$dark-gray-blue;
     line-height: 1.5;
+
+    @include mixins.responsive(mixins.$mobile) {
+      font-size: 2rem;
+    }
   }
 
   &__product-price-container {
@@ -45,6 +81,13 @@
     flex-direction: column;
     gap: 1.2rem;
     margin-bottom: 1.2rem;
+
+    @include mixins.responsive(mixins.$mobile) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0;
+    }
   }
 
   &__product-price {
@@ -52,6 +95,11 @@
     font-size: 3.6rem;
     display: flex;
     gap: 1.2rem;
+
+    @include mixins.responsive(mixins.$mobile) {
+      gap: 1.8rem;
+      font-size: 4rem;
+    }
   }
 
   &__product-discount {
@@ -62,6 +110,10 @@
 
     background-color: variables.$pale-orange;
     color: variables.$orange;
+
+    @include mixins.responsive(mixins.$mobile) {
+      font-size: 2rem;
+    }
   }
 
   &__original-price {
@@ -69,17 +121,20 @@
     font-weight: 700;
     color: variables.$grayish-blue;
     text-decoration: line-through;
+
+    @include mixins.responsive(mixins.$mobile) {
+      font-size: 2rem;
+    }
   }
 
   &__form {
     display: flex;
     gap: 1.2rem;
-  }
 
-  &__qty-input {
-    display: flex;
-    // grow | shrink | basis
-    flex: 0 1 35%;
+    @include mixins.responsive(mixins.$mobile) {
+      flex-direction: column;
+      gap: 1.8rem;
+    }
   }
 
   &__product-qty,
@@ -87,6 +142,16 @@
     padding: 1.8rem 1.2rem;
     width: 33%;
     background-color: variables.$light-gray-blue;
+
+    @include mixins.responsive(mixins.$mobile) {
+      padding: 2rem;
+    }
+  }
+
+  &__qty-input {
+    display: flex;
+    // grow | shrink | basis
+    flex: 0 1 35%;
   }
 
   &__qty-count {
@@ -99,6 +164,10 @@
     &--add {
       border-radius: 0 10px 10px 0;
     }
+
+    @include mixins.responsive(mixins.$mobile) {
+      flex: 0 1 10%;
+    }
   }
 
   &__product-qty {
@@ -106,6 +175,11 @@
     font-size: 1.6rem;
     text-align: center;
     border: none;
+
+    @include mixins.responsive(mixins.$mobile) {
+      flex: 0 1 80%;
+      font-size: 2rem;
+    }
   }
 
   &__btn-add {
@@ -125,10 +199,17 @@
     color: variables.$white;
 
     box-shadow: 0 1.8rem 4.8rem rgba(255, 125, 26, 0.5);
+    @include mixins.responsive(mixins.$mobile) {
+      padding: 2rem 0;
+    }
   }
 }
 
 .sectionBreak {
   border-top: 1px solid variables.$light-gray-blue;
   margin: 0 8.4rem;
+
+  @include mixins.responsive(mixins.$mobile) {
+    display: none;
+  }
 }

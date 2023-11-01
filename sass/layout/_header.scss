@@ -1,4 +1,5 @@
 @use "../abstract/variables" as variables;
+@use "../abstract/mixins" as mixins;
 
 .header {
   display: grid;
@@ -6,9 +7,35 @@
   align-items: center;
   padding: 3.6rem 8.4rem;
 
+  @include mixins.responsive(mixins.$mobile) {
+    position: relative;
+    grid-template-columns: 10% 70% 20%;
+    padding: 2.4rem 3.6rem;
+
+    &__navigation {
+      opacity: 0;
+      pointer-events: none;
+      visibility: hidden;
+      position: absolute;
+      background-color: variables.$white;
+    }
+  }
+
+  &__menu-toggle {
+    display: none;
+
+    @include mixins.responsive(mixins.$mobile) {
+      display: inline;
+    }
+  }
+
   &__logo {
     max-width: 17rem;
     width: 100%;
+
+    @include mixins.responsive(mixins.$mobile) {
+      max-width: 20rem;
+    }
   }
 
   &__menu {
@@ -22,6 +49,11 @@
       text-decoration: none;
       color: variables.$dark-gray-blue;
     }
+
+    @include mixins.responsive(mixins.$mobile) {
+      flex-direction: column;
+      color: variables.$dark-gray-blue;
+    }
   }
 
   &__account-details {
@@ -29,6 +61,10 @@
     align-items: center;
     justify-self: right;
     gap: 3.6rem;
+
+    @include mixins.responsive(mixins.$mobile) {
+      gap: 2.4rem;
+    }
 
     .header__cart-container {
       .header__cartIcon {
@@ -38,6 +74,10 @@
 
     .header__account-picture {
       height: 5.2rem;
+
+      @include mixins.responsive(mixins.$mobile) {
+        height: 3.6rem;
+      }
     }
   }
 }
