@@ -18,7 +18,7 @@
   }
 
   &__product-image {
-    max-width: 55rem;
+    max-width: 50rem;
     border-radius: 25px;
     margin-bottom: 3.6rem;
 
@@ -26,13 +26,6 @@
       border-radius: 0;
       margin-bottom: 0;
       max-width: 100vw;
-
-      // &::before {
-      //   content: "";
-      //   background-image: url("/images/icon-previous.svg");
-      //   position: absolute;
-      //   width: 10rem;
-      // }
     }
   }
 
@@ -211,5 +204,19 @@
 
   @include mixins.responsive(mixins.$mobile) {
     display: none;
+  }
+}
+
+.overlay {
+  transition: 0.3s all ease-in;
+  &--active {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #000;
+    opacity: 0.6;
+    filter: opacity(100%);
   }
 }

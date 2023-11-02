@@ -33,6 +33,12 @@
         <img src="./images/logo.svg" alt="Sneakers Logo" class="header__logo" />
 
         <nav class="header__navigation">
+          <img
+            src="./images/icon-close.svg"
+            alt=""
+            class="header__menu-close header__menu-close--hidden"
+          />
+
           <ul class="header__menu">
             <li class="header__menu-list">
               <a href="#" class="header__menu-link">Collections</a>
@@ -63,6 +69,16 @@
               alt="Cart Icon"
               class="header__cartIcon"
             />
+
+            <div class="header__cart-detail header__cart-detail--hidden">
+              <p class="header__text-cart">Cart</p>
+
+              <hr class="cartBreak" />
+
+              <div class="header__cart-content">
+                <p class="header__text-cart-empty">Your cart is empty</p>
+              </div>
+            </div>
           </div>
 
           <img
@@ -174,6 +190,8 @@
         </div>
       </div>
     </main>
+
+    <div class="overlay"></div>
   </body>
 </html>
 

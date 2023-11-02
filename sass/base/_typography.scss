@@ -16,7 +16,7 @@
 
   &--secondary {
     color: variables.$orange;
-    font-size: 2.4rem;
+    font-size: 1.8rem;
     text-transform: uppercase;
 
     @include mixins.responsive(mixins.$mobile) {
