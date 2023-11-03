@@ -59,10 +59,15 @@
     font-size: 1.8rem;
     gap: 2.4rem;
 
-    &-list > &-link:link,
+    &-link:link,
     &-link:visited {
       text-decoration: none;
       color: variables.$dark-gray-blue;
+    }
+
+    &-link:hover,
+    &-link:active {
+      border-bottom: 2px solid variables.$orange;
     }
 
     &-close {
@@ -110,7 +115,7 @@
     }
   }
 
-  &__cartIcon {
+  &__cart-icon {
     height: 2.4rem;
   }
 
@@ -119,18 +124,30 @@
     flex-direction: column;
     top: 80%;
     right: 5%;
-    border-radius: 5px;
+    border-radius: 10px;
 
     width: 25%;
     height: fit-content;
-    overflow: scroll;
 
     background-color: variables.$white;
 
     box-shadow: 0 1.8rem 2rem rgba(0, 0, 0, 0.3);
+    transition: 0.1s all ease-in;
 
     &--hidden {
-      display: none;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    @include mixins.responsive(mixins.$mobile) {
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 1rem;
+      left: 0;
+      right: 0;
+      top: 100%;
+      width: 95%;
     }
   }
 
@@ -138,6 +155,10 @@
     padding: 1.8rem;
     font-size: 1.6rem;
     font-weight: 700;
+
+    @include mixins.responsive(mixins.$mobile) {
+      padding: 3rem 2.25rem;
+    }
   }
 
   &__cart-content {
@@ -151,6 +172,10 @@
 
     padding: 9.6rem 3.6rem;
     color: variables.$dark-gray-blue;
+
+    @include mixins.responsive(mixins.$mobile) {
+      font-size: 1.75rem;
+    }
   }
 
   &__account-picture {
