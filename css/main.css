@@ -70,7 +70,7 @@ body {
     top: 0;
     height: 100vh;
     width: 70vw;
-    z-index: 100;
+    z-index: 3;
     transition: 0.3s all ease-in;
     transform: translateX(-100%);
   }
@@ -179,6 +179,7 @@ body {
     right: 0;
     top: 100%;
     width: 95%;
+    z-index: 101;
   }
 }
 .header__text-cart {
@@ -219,6 +220,9 @@ body {
   border-top: 1px solid hsl(223, 64%, 98%);
 }
 
+.product-page {
+  position: relative;
+}
 .product-page__product-container {
   padding: 8.4rem 14rem;
   display: flex;
@@ -245,6 +249,7 @@ body {
   max-width: 100%;
   border-radius: 25px;
   margin-bottom: 3.6rem;
+  transition: 0.2s all ease-in;
 }
 @media (max-width: 400px) {
   .product-page__product-image {
@@ -285,10 +290,9 @@ body {
 }
 .product-page__image-gallery {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  -moz-column-gap: 3.6rem;
-       column-gap: 3.6rem;
-  justify-items: center;
+  display: flex;
+  gap: 3.6rem;
+  justify-content: space-between;
 }
 @media (max-width: 400px) {
   .product-page__image-gallery {
@@ -457,6 +461,72 @@ body {
   .product-page__btn-add {
     padding: 2rem 0;
   }
+}
+.product-page__lightbox {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  z-index: 5;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: 0.3s all ease-in;
+  transform: translate(-50%, -60%);
+}
+.product-page__lightbox-close-icon {
+  max-width: 2.4rem;
+  color: hsl(0, 0%, 100%);
+  justify-self: right;
+}
+.product-page__lightbox-big-image {
+  position: relative;
+}
+.product-page__lightbox-product-image {
+  border-radius: 15px;
+  max-width: 60rem;
+}
+.product-page__lightbox-prev, .product-page__lightbox-next {
+  position: absolute;
+}
+.product-page__lightbox-prev {
+  top: 50%;
+  left: 0;
+}
+.product-page__lightbox-next {
+  top: 50%;
+  right: 0;
+}
+.product-page__lightbox-image-gallery {
+  display: flex;
+  gap: 1.8rem;
+  justify-content: center;
+}
+.product-page__lightbox-image {
+  border-radius: 15px;
+  display: flex;
+  background-color: hsl(0, 0%, 100%);
+}
+.product-page__lightbox-image--active {
+  outline: 6px solid hsl(26, 100%, 55%);
+}
+.product-page__lightbox-gallery-image {
+  max-width: 10.4rem;
+  border-radius: 15px;
+  transform: scale(1.01);
+}
+.product-page__lightbox-gallery-image--active {
+  filter: opacity(0.3);
+}
+.product-page__lightbox-gallery-image:hover {
+  filter: opacity(0.5);
+}
+.product-page__lightbox--active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .sectionBreak {
