@@ -268,6 +268,9 @@
 
   // Lightbox
   &__lightbox {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
     position: absolute;
     top: 65%;
     left: 50%;
@@ -275,17 +278,20 @@
     flex-direction: column;
     gap: 2.4rem;
     z-index: 5;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
     transition: 0.3s all ease-in;
 
     transform: translate(-50%, -60%);
 
+    &-close {
+      display: flex;
+      justify-content: right;
+    }
+
     &-close-icon {
-      max-width: 2.4rem;
+      max-width: 2rem;
+      max-height: 2rem;
+      transform: scale(1.5);
       color: variables.$white;
-      justify-self: right;
     }
 
     &-big-image {
@@ -304,12 +310,24 @@
 
     &-prev {
       top: 50%;
-      left: 0;
+      left: -5%;
+
+      &-icon {
+        background-color: variables.$light-gray-blue;
+        padding: 1.5rem 2rem;
+        border-radius: 50%;
+      }
     }
 
     &-next {
       top: 50%;
-      right: 0;
+      right: -5%;
+
+      &-icon {
+        background-color: variables.$light-gray-blue;
+        padding: 1.5rem 2rem;
+        border-radius: 50%;
+      }
     }
 
     &-image-gallery {
@@ -347,6 +365,10 @@
       opacity: 1;
       visibility: visible;
       pointer-events: auto;
+    }
+
+    @include mixins.responsive(mixins.$mobile) {
+      display: none;
     }
   }
 }
