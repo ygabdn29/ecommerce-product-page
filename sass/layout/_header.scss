@@ -115,6 +115,27 @@
     }
   }
 
+  &__cart-icon-container {
+    position: relative;
+  }
+
+  &__cart-total-item {
+    position: absolute;
+    right: 0;
+    top: -30%;
+
+    &-text {
+      color: variables.$white;
+      padding: 0.1rem 0.6rem;
+      background-color: variables.$orange;
+      border-radius: 15px;
+    }
+
+    &--hidden {
+      display: none;
+    }
+  }
+
   &__cart-icon {
     height: 2.4rem;
   }
@@ -126,7 +147,7 @@
     right: 5%;
     border-radius: 10px;
 
-    width: 25%;
+    width: 30%;
     height: fit-content;
 
     background-color: variables.$white;
@@ -162,11 +183,6 @@
     }
   }
 
-  &__cart-content {
-    display: flex;
-    justify-content: center;
-  }
-
   &__text-cart-empty {
     font-size: 1.4rem;
     font-weight: 700;
@@ -174,8 +190,78 @@
     padding: 9.6rem 3.6rem;
     color: variables.$dark-gray-blue;
 
+    &--hidden {
+      display: none;
+    }
+
     @include mixins.responsive(mixins.$mobile) {
       font-size: 1.75rem;
+    }
+  }
+
+  &__cart-content {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__cart-item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 2.4rem;
+    gap: 1.4rem;
+
+    &-container {
+      display: grid;
+      grid-template-columns: 1fr 4fr 1fr;
+      gap: 0.4rem;
+      justify-content: space-between;
+    }
+
+    &-thumbnail {
+      &-image {
+        max-width: 5.2rem;
+        border-radius: 5px;
+      }
+    }
+
+    &-detail {
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+      gap: 1.2rem;
+      font-size: 1.6rem;
+      color: variables.$dark-gray-blue;
+    }
+
+    &-name {
+    }
+
+    &-price {
+    }
+
+    &-total-price {
+      color: variables.$darker-blue;
+      font-weight: 700;
+    }
+
+    &-delete {
+      justify-self: right;
+      &-btn {
+        padding: 1.2rem;
+        background-color: transparent;
+        border: none;
+      }
+    }
+
+    &-checkout-btn {
+      padding: 1.8rem;
+      font-weight: 700;
+      font-size: 1.6rem;
+      border: none;
+      border-radius: 10px;
+      background-color: variables.$orange;
+      color: variables.$white;
     }
   }
 

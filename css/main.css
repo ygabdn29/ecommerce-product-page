@@ -149,6 +149,23 @@ body {
     gap: 2.4rem;
   }
 }
+.header__cart-icon-container {
+  position: relative;
+}
+.header__cart-total-item {
+  position: absolute;
+  right: 0;
+  top: -30%;
+}
+.header__cart-total-item-text {
+  color: hsl(0, 0%, 100%);
+  padding: 0.1rem 0.6rem;
+  background-color: hsl(26, 100%, 55%);
+  border-radius: 15px;
+}
+.header__cart-total-item--hidden {
+  display: none;
+}
 .header__cart-icon {
   height: 2.4rem;
 }
@@ -158,7 +175,7 @@ body {
   top: 80%;
   right: 5%;
   border-radius: 10px;
-  width: 25%;
+  width: 30%;
   height: -moz-fit-content;
   height: fit-content;
   background-color: hsl(0, 0%, 100%);
@@ -192,20 +209,69 @@ body {
     padding: 3rem 2.25rem;
   }
 }
-.header__cart-content {
-  display: flex;
-  justify-content: center;
-}
 .header__text-cart-empty {
   font-size: 1.4rem;
   font-weight: 700;
   padding: 9.6rem 3.6rem;
   color: hsl(219, 9%, 45%);
 }
+.header__text-cart-empty--hidden {
+  display: none;
+}
 @media (max-width: 400px) {
   .header__text-cart-empty {
     font-size: 1.75rem;
   }
+}
+.header__cart-content {
+  display: flex;
+  justify-content: center;
+}
+.header__cart-item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 2.4rem;
+  gap: 1.4rem;
+}
+.header__cart-item-container {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  gap: 0.4rem;
+  justify-content: space-between;
+}
+.header__cart-item-thumbnail-image {
+  max-width: 5.2rem;
+  border-radius: 5px;
+}
+.header__cart-item-detail {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  gap: 1.2rem;
+  font-size: 1.6rem;
+  color: hsl(219, 9%, 45%);
+}
+.header__cart-item-total-price {
+  color: hsl(220, 13%, 13%);
+  font-weight: 700;
+}
+.header__cart-item-delete {
+  justify-self: right;
+}
+.header__cart-item-delete-btn {
+  padding: 1.2rem;
+  background-color: transparent;
+  border: none;
+}
+.header__cart-item-checkout-btn {
+  padding: 1.8rem;
+  font-weight: 700;
+  font-size: 1.6rem;
+  border: none;
+  border-radius: 10px;
+  background-color: hsl(26, 100%, 55%);
+  color: hsl(0, 0%, 100%);
 }
 .header__account-picture {
   height: 5.2rem;

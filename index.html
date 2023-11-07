@@ -64,13 +64,22 @@
 
         <div class="header__account-details">
           <div class="header__cart-container">
-            <img
-              src="./images/icon-cart.svg"
-              alt="Cart Icon"
-              class="header__cart-icon"
-            />
+            <div class="header__cart-icon-container">
+              <img
+                src="./images/icon-cart.svg"
+                alt="Cart Icon"
+                class="header__cart-icon"
+              />
 
-            <div class="header__cart-detail header__cart-detail--hidden">
+              <div
+                class="header__cart-total-item header__cart-total-item--hidden"
+              ></div>
+            </div>
+
+            <div
+              class="header__cart-detail header__cart-detail--hidden"
+              data-totalQty="0"
+            >
               <p class="header__text-cart">Cart</p>
 
               <hr class="cartBreak" />
