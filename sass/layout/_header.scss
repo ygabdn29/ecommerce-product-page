@@ -117,6 +117,7 @@
 
   &__cart-icon-container {
     position: relative;
+    cursor: pointer;
   }
 
   &__cart-total-item {
@@ -234,12 +235,6 @@
       color: variables.$dark-gray-blue;
     }
 
-    &-name {
-    }
-
-    &-price {
-    }
-
     &-total-price {
       color: variables.$darker-blue;
       font-weight: 700;
@@ -251,6 +246,7 @@
         padding: 1.2rem;
         background-color: transparent;
         border: none;
+        cursor: pointer;
       }
     }
 

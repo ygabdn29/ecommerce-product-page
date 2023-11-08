@@ -151,6 +151,7 @@ body {
 }
 .header__cart-icon-container {
   position: relative;
+  cursor: pointer;
 }
 .header__cart-total-item {
   position: absolute;
@@ -263,6 +264,7 @@ body {
   padding: 1.2rem;
   background-color: transparent;
   border: none;
+  cursor: pointer;
 }
 .header__cart-item-checkout-btn {
   padding: 1.8rem;
