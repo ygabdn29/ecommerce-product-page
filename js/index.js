@@ -35,7 +35,14 @@ const min = parseInt(qtyInput.getAttribute("min"));
 const qtyForm = document.querySelector(".product-page__form");
 const cartContent = document.querySelector(".header__cart-content");
 const emptyCartText = document.querySelector(".header__text-cart-empty");
+const productQtyText = document.querySelector(".header__cart-item-quantity");
+const productTotalPrice = document.querySelector(
+  ".header__cart-item-total-price"
+);
+const productItemContainer = document.querySelector(".header__cart-item");
 const totalQtyContainer = document.querySelector(".header__cart-total-item");
+const totalQtyText = document.querySelector(".header__cart-total-item-text");
+const deleteItemBtn = document.querySelector(".header__cart-item-delete-btn");
 
 function changeActiveImages(lightbox = false, e) {
   if (lightbox) {
@@ -138,50 +145,22 @@ numberForm.addEventListener("click", function (e) {
 qtyForm.addEventListener("submit", function (e) {
   e.preventDefault();
   const productQty = Object.fromEntries(new FormData(e.target));
-  let cartItem = `                
-  <div class="header__cart-item">
-    <div class="header__cart-item-container">
-      <div class="header__cart-item-thumbnail">
-        <img
-          src="./images/image-product-1-thumbnail.jpg"
-          alt=""
-          class="header__cart-item-thumbnail-image"
-        />
-      </div>
-
-      <div class="header__cart-item-detail">
-        <p class="header__cart-item-name">
-          Fall Limited Edition Sneakers
-        </p>
-
-        <div class="header__cart-item-price">
-          <span class="header__cart-item-price">$125.00</span>
-          <span class="header__cart-item-quantity">x ${
-            productQty["product-qty"]
-          }</span>
-          <span class="header__cart-item-total-price"
-            >$${125 * parseInt(productQty["product-qty"])}.00</span
-          >
-        </div>
-      </div>
-
-      <div class="header__cart-item-delete">
-        <button class="header__cart-item-delete-btn">
-          <img src="./images/icon-delete.svg" alt="" />
-        </button>
-      </div>
-    </div>
-
-    <button class="header__cart-item-checkout-btn">
-      Checkout
-    </button>
-</div>`;
-
-  let totalQty = `<p class="header__cart-total-item-text">${productQty["product-qty"]}</p>`;
 
   emptyCartText.classList.add("header__text-cart-empty--hidden");
-  cartContent.insertAdjacentHTML("afterbegin", cartItem);
+  productItemContainer.classList.remove("header__cart-item--hidden");
+  productQtyText.innerHTML = productQty["product-qty"];
+  productTotalPrice.innerHTML = `$${productQty["product-qty"] * 125}.00`;
 
+  totalQtyText.innerHTML = productQty["product-qty"];
   totalQtyContainer.classList.remove("header__cart-total-item--hidden");
-  totalQtyContainer.insertAdjacentHTML("afterbegin", totalQty);
+});
+
+deleteItemBtn.addEventListener("click", function () {
+  emptyCartText.classList.remove("header__text-cart-empty--hidden");
+  productItemContainer.classList.add("header__cart-item--hidden");
+  productQtyText.innerHTML = "";
+  productTotalPrice.innerHTML = "";
+
+  totalQtyText.innerHTML = "";
+  totalQtyContainer.classList.add("header__cart-total-item--hidden");
 });

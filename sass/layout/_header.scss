@@ -263,6 +263,10 @@
       background-color: variables.$orange;
       color: variables.$white;
     }
+
+    &--hidden {
+      display: none;
+    }
   }
 
   &__account-picture {
@@ -270,6 +274,11 @@
 
     @include mixins.responsive(mixins.$mobile) {
       height: 3.6rem;
+    }
+
+    &:hover {
+      outline: 2px solid variables.$orange;
+      border-radius: 50%;
     }
   }
 }

@@ -73,7 +73,9 @@
 
               <div
                 class="header__cart-total-item header__cart-total-item--hidden"
-              ></div>
+              >
+                <p class="header__cart-total-item-text"></p>
+              </div>
             </div>
 
             <div
@@ -86,6 +88,40 @@
 
               <div class="header__cart-content">
                 <p class="header__text-cart-empty">Your cart is empty</p>
+
+                <div class="header__cart-item header__cart-item--hidden">
+                  <div class="header__cart-item-container">
+                    <div class="header__cart-item-thumbnail">
+                      <img
+                        src="./images/image-product-1-thumbnail.jpg"
+                        alt=""
+                        class="header__cart-item-thumbnail-image"
+                      />
+                    </div>
+
+                    <div class="header__cart-item-detail">
+                      <p class="header__cart-item-name">
+                        Fall Limited Edition Sneakers
+                      </p>
+
+                      <div class="header__cart-item-price">
+                        <span class="header__cart-item-price">$125.00 x</span>
+                        <span class="header__cart-item-quantity"></span>
+                        <span class="header__cart-item-total-price"></span>
+                      </div>
+                    </div>
+
+                    <div class="header__cart-item-delete">
+                      <button class="header__cart-item-delete-btn">
+                        <img src="./images/icon-delete.svg" alt="" />
+                      </button>
+                    </div>
+                  </div>
+
+                  <button class="header__cart-item-checkout-btn">
+                    Checkout
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -245,11 +281,15 @@
 
         <div class="product-page__lightbox-big-image">
           <div class="product-page__lightbox-prev">
-            <img
-              src="./images/icon-previous.svg"
-              alt=""
-              class="product-page__lightbox-prev-icon"
-            />
+            <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M11 1 3 9l8 8"
+                stroke-width="3"
+                fill="none"
+                fill-rule="evenodd"
+                class="product-page__lightbox-prev-icon"
+              />
+            </svg>
           </div>
 
           <img
@@ -259,11 +299,15 @@
           />
 
           <div class="product-page__lightbox-next">
-            <img
-              src="./images/icon-next.svg"
-              alt=""
-              class="product-page__lightbox-next-icon"
-            />
+            <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="m2 1 8 8-8 8"
+                stroke-width="3"
+                fill="none"
+                fill-rule="evenodd"
+                class="product-page__lightbox-next-icon"
+              />
+            </svg>
           </div>
         </div>
 
@@ -309,13 +353,12 @@
       </div>
     </main>
 
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="https://github.com/ygabdn29">Yoga Budiman</a>.
+    </div>
     <div class="overlay"></div>
   </body>
 </html>
-
-<!-- <div class="attribution">
-    Challenge by
-    <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-      >Frontend Mentor</a
-    >. Coded by <a href="#">Your Name Here</a>.
-  </div> -->
